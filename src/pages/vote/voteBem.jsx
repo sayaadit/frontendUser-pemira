@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function VoteDpm() {
+function VoteBem() {
   const classes = useStyles()
   const [valueData, setValue] = useState(
     'Erwin Maulana & Nurjannatin Aliya A.T.',
@@ -48,7 +48,7 @@ function VoteDpm() {
 
   useEffect(() => {
     async function fetchData() {
-      const dpm = await axios('http://localhost:8000/api/v1/get-paslon-dpm')
+      const dpm = await axios('http://localhost:8000/api/v1/get-paslon-bem')
 
       setData(dpm.data.data)
     }
@@ -65,9 +65,11 @@ function VoteDpm() {
   }
 
   const handleSubmit = props => {
-    localStorage.setItem('dpm', valueData)
+    localStorage.setItem('bem', valueData)
     history.push('/')
   }
+
+  console.log(data)
   return (
     <div>
       <Header />
@@ -130,4 +132,4 @@ function VoteDpm() {
   )
 }
 
-export default VoteDpm
+export default VoteBem

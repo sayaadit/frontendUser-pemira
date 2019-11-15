@@ -22,6 +22,10 @@ const useStyles = makeStyles(theme => ({
 
 function Home() {
   const classes = useStyles()
+  let dpm = localStorage.getItem('dpm')
+  let bem = localStorage.getItem('bem')
+  let himpunan = localStorage.getItem('himpunan')
+
   return (
     <div>
       <Header />
@@ -43,7 +47,7 @@ function Home() {
               </h5>
             </Paper>
           </Link>
-          <Link to='vote-DPM'>
+          <Link to='/vote-Bem'>
             <Paper className={classes.root}>
               <h5
                 style={{
@@ -59,7 +63,7 @@ function Home() {
               </h5>
             </Paper>
           </Link>
-          <Link to='vote-DPM'>
+          <Link to='/vote-Himpunan'>
             <Paper className={classes.root}>
               <h5
                 style={{
@@ -77,13 +81,13 @@ function Home() {
           </Link>
         </div>
 
-        <RekapHasil />
+        <RekapHasil dpm={dpm} bem={bem} himpunan={himpunan} />
         <center>
           <h1>
-            Create With{' '}
+            Create With
             <a href='#' style={{color: '#DD2E44', textDecoration: 'none'}}>
               &hearts;
-            </a>{' '}
+            </a>
             Panitia Perwira 2019
           </h1>
         </center>

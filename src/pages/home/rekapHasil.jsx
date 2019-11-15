@@ -17,23 +17,36 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const RekapHasil = () => {
+const RekapHasil = props => {
   const classes = useStyles()
   return (
-    <div style={{flexDirection: 'column', display: 'flex'}}>
+    <div>
       <h1>Rekap Hasil Pilih</h1>
+      <table>
+        <tr>
+          <td>
+            <h1>Vote Bem </h1>
+          </td>
+          <td>
+            <h1>:</h1>
+          </td>
+          <td>
+            <h1>{props.bem}</h1>
+          </td>
+        </tr>
+      </table>
       <div style={{flexDirection: 'row', display: 'flex'}}>
-        <h1 style={{flex: 0.3}}>Vote Bem </h1> <h1 style={{flex: 0.1}}>:</h1>
-        <h1>Paslon BEM Nomer 1</h1>
+        <h1 style={{flex: 0.5}}>Vote Bem </h1> <h1 style={{flex: 0.1}}>:</h1>
+        <h1>{props.bem}</h1>
       </div>
       <div style={{flexDirection: 'row', display: 'flex'}}>
-        <h1 style={{flex: 0.3}}>Vote DPM </h1> <h1 style={{flex: 0.1}}>:</h1>
-        <h1>Paslon DPM Nomer 1</h1>
+        <h1 style={{flex: 0.5}}>Vote DPM </h1> <h1 style={{flex: 0.1}}>:</h1>
+        <h1>{props.dpm}</h1>
       </div>
       <div style={{flexDirection: 'row', display: 'flex'}}>
-        <h1 style={{flex: 0.33}}>Vote Himpunan </h1>
+        <h1 style={{flex: 0.5}}>Vote Himpunan </h1>
         <h1 style={{flex: 0.1}}>:</h1>
-        <h1>Paslon Himpunan Nomer 1</h1>
+        <h1>{props.himpunan}</h1>
       </div>
       <Link to='/terimakasih'>
         <Button variant='contained' className={classes.logout}>

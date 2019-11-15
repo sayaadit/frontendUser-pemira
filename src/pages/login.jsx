@@ -71,15 +71,11 @@ function Login() {
             fullWidth
           />
         </div>
-        {/* <Link to='/'> */}
-        <Button
-          onClick={() => alert('eh ngentot')}
-          variant='contained'
-          className={classes.login}
-        >
-          Login
-        </Button>
-        {/* </Link> */}
+        <Link to='/'>
+          <Button variant='contained' className={classes.login}>
+            Login
+          </Button>
+        </Link>
       </div>
     </div>
   )

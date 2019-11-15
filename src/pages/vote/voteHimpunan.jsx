@@ -38,17 +38,17 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function VoteDpm() {
+function VoteHimpunan() {
   const classes = useStyles()
-  const [valueData, setValue] = useState(
-    'Erwin Maulana & Nurjannatin Aliya A.T.',
-  )
+  const [valueData, setValue] = useState('female')
   const [data, setData] = useState(null)
   let history = useHistory()
 
   useEffect(() => {
     async function fetchData() {
-      const dpm = await axios('http://localhost:8000/api/v1/get-paslon-dpm')
+      const dpm = await axios(
+        `http://localhost:8000/api/v1/get-paslon-${'ktm'}`,
+      )
 
       setData(dpm.data.data)
     }
@@ -63,11 +63,12 @@ function VoteDpm() {
   const handleChange = event => {
     setValue(event.target.value)
   }
-
-  const handleSubmit = props => {
-    localStorage.setItem('dpm', valueData)
+  const handleSubmit = () => {
+    console.log(valueData)
+    localStorage.setItem('himpunan', valueData)
     history.push('/')
   }
+
   return (
     <div>
       <Header />
@@ -130,4 +131,4 @@ function VoteDpm() {
   )
 }
 
-export default VoteDpm
+export default VoteHimpunan
