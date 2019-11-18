@@ -31,22 +31,6 @@ function Home() {
       <Header />
       <Container>
         <div style={{flexDirection: 'row', display: 'flex'}}>
-          <Link to='/vote-DPM'>
-            <Paper className={classes.root}>
-              <h5
-                style={{
-                  color: '#fff',
-                  fontSize: 52,
-                  fontWeight: 'bold',
-                  fontFamily: 'Strasua',
-                  fontStyle: 'regular',
-                  marginTop: 15,
-                }}
-              >
-                Vote DPM
-              </h5>
-            </Paper>
-          </Link>
           <Link to='/vote-Bem'>
             <Paper className={classes.root}>
               <h5
@@ -56,10 +40,26 @@ function Home() {
                   fontWeight: 'bold',
                   fontFamily: 'Strasua',
                   fontStyle: 'regular',
-                  marginTop: 15,
+                  marginTop: 60,
                 }}
               >
                 Vote BEM
+              </h5>
+            </Paper>
+          </Link>
+          <Link to='/vote-DPM'>
+            <Paper className={classes.root}>
+              <h5
+                style={{
+                  color: '#fff',
+                  fontSize: 52,
+                  fontWeight: 'bold',
+                  fontFamily: 'Strasua',
+                  fontStyle: 'regular',
+                  marginTop: 60,
+                }}
+              >
+                Vote DPM
               </h5>
             </Paper>
           </Link>
@@ -72,7 +72,7 @@ function Home() {
                   fontWeight: 'bold',
                   fontFamily: 'Strasua',
                   fontStyle: 'regular',
-                  marginTop: 15,
+                  marginTop: 60,
                 }}
               >
                 Vote Himpunan
