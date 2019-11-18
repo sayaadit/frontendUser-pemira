@@ -85,9 +85,7 @@ function Home() {
         <center>
           <h1>
             Create With
-            <a href='#' style={{color: '#DD2E44', textDecoration: 'none'}}>
-              &hearts;
-            </a>
+            <p style={{color: '#DD2E44', textDecoration: 'none'}}>&hearts;</p>
             Panitia Perwira 2019
           </h1>
         </center>

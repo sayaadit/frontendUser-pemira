@@ -119,37 +119,6 @@ function VoteHimpunan() {
               </Card>
             )
           })}
-          <Card className={classes.card}>
-            <CardHeader title={0} style={{textAlign: 'center'}} />
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image=''
-                title='Contemplative Reptile'
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant='h5'
-                  component='h2'
-                  style={{textAlign: 'center'}}
-                >
-                  GOLPUT
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions
-              style={{alignItems: 'center', justifyContent: 'center'}}
-            >
-              <Radio
-                checked={valueData === 'GOLPUT'}
-                onChange={handleChange}
-                value={'GOLPUT'}
-                name={'GOLPUT'}
-                inputProps={{'aria-label': 'A'}}
-              />
-            </CardActions>
-          </Card>
         </div>
         <Button
           variant='contained'

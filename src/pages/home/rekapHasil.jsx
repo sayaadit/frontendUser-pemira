@@ -27,10 +27,21 @@ function RekapHasil(props) {
   console.log(login)
 
   const handleSubmit = () => {
+    let bem = 'GOLPUT'
+    let dpm = 'GOLPUT'
+    let himpunan = 'GOLPUT'
+
+    if (props.bem !== null) {
+      bem = props.bem
+    } else if (props.dpm !== null) {
+      dpm = props.dpm
+    } else if (props.himpunan !== null) {
+      himpunan = props.himpunan
+    }
     const requestBody = {
-      suara_bem: props.bem,
-      suara_dpm: props.dpm,
-      suara_himpunan: props.himpunan,
+      suara_bem: bem,
+      suara_dpm: dpm,
+      suara_himpunan: himpunan,
     }
     console.log(requestBody)
     const config = {
@@ -41,7 +52,7 @@ function RekapHasil(props) {
     setLoading(true)
     axios
       .put(
-        `http://localhost:8000/api/v1/${login[0].username}/vote`,
+        `http://kinamotif.com/backend/api/v1/${login[0].username}/vote`,
         qs.stringify(requestBody),
         config,
       )
@@ -50,6 +61,7 @@ function RekapHasil(props) {
         localStorage.removeItem('dpm')
         localStorage.removeItem('bem')
         localStorage.removeItem('himpunan')
+        localStorage.removeItem('_p')
         console.log(result.data.data)
         history.push('/')
       })

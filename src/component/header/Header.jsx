@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Logo from '../../assets/logo.png'
 import Button from '@material-ui/core/Button'
 import {makeStyles} from '@material-ui/core/styles'
@@ -30,7 +30,13 @@ function Header() {
   const history = useHistory()
   const login = JSON.parse(localStorage.getItem('_p'))
 
-  if (login === [] || login === null || login[0].suara_bem !== '0') {
+  if (
+    login === [] ||
+    login === null ||
+    login[0].suara_bem !== '0' ||
+    login[0].suara_dpm !== '0' ||
+    login[0].suara_himp !== '0'
+  ) {
     history.push('/')
   }
   const logout = () => {
@@ -64,12 +70,12 @@ function Header() {
               paddingTop: 15,
             }}
           >
-            Halo, {login[0].username}
+            Halo, {login ? login[0].username : 'kosong'}
           </h4>
         </div>
         <div style={{flex: 0.2, margin: 0}}>
           <Button variant='contained' className={classes.ktm}>
-            {login[0].jenis_himp}
+            {login ? login[0].jenis_himp : 'kosong'}
           </Button>
           <Button
             variant='contained'

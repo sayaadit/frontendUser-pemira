@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import LoginImage from '../assets/login.png'
+import fakultas from '../assets/fakultas.png'
+import pemira from '../assets/pemira.png'
 import {makeStyles} from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -58,7 +60,7 @@ function Login() {
     setLoading(true)
     axios
       .post(
-        'http://localhost:8000/api/v1/login',
+        'http://kinamotif.com/backend/api/v1/login',
         qs.stringify(requestBody),
         config,
       )
@@ -77,6 +79,14 @@ function Login() {
   return (
     <div style={{flexDirection: 'row', display: 'flex'}}>
       <div style={{flex: 1, backgroundColor: '#282A74'}}>
+        <div style={{flexDirection: 'row', display: 'flex', margin: 20}}>
+          <div style={{flex: 1}}>
+            <img src={fakultas} alt='terimakasih' />
+          </div>
+          <div>
+            <img src={pemira} alt='terimakasih' />
+          </div>
+        </div>
         <img
           src={LoginImage}
           alt='terimakasih'
