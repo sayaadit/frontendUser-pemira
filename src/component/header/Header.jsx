@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Logo from '../../assets/logo.png'
 import Button from '@material-ui/core/Button'
 import {makeStyles} from '@material-ui/core/styles'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   logout: {
@@ -25,8 +25,18 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Header = () => {
+function Header() {
   const classes = useStyles()
+  const history = useHistory()
+  const login = JSON.parse(localStorage.getItem('_p'))
+
+  if (login === [] || login === null || login[0].suara_bem !== '0') {
+    history.push('/')
+  }
+  const logout = () => {
+    localStorage.removeItem('_p')
+    history.push('/')
+  }
   return (
     <div>
       <nav
@@ -54,14 +64,18 @@ const Header = () => {
               paddingTop: 15,
             }}
           >
-            Halo, Asepbalon
+            Halo, {login[0].username}
           </h4>
         </div>
         <div style={{flex: 0.2, margin: 0}}>
           <Button variant='contained' className={classes.ktm}>
-            Ktm
+            {login[0].jenis_himp}
           </Button>
-          <Button variant='contained' className={classes.logout}>
+          <Button
+            variant='contained'
+            className={classes.logout}
+            onClick={() => logout()}
+          >
             Logout
           </Button>
         </div>

@@ -43,11 +43,12 @@ function VoteHimpunan() {
   const [valueData, setValue] = useState('female')
   const [data, setData] = useState(null)
   let history = useHistory()
+  const login = JSON.parse(localStorage.getItem('_p'))
 
   useEffect(() => {
     async function fetchData() {
       const dpm = await axios(
-        `http://localhost:8000/api/v1/get-paslon-${'ktm'}`,
+        `http://localhost:8000/api/v1/get-paslon-${login[0].jenis_himp}`,
       )
 
       setData(dpm.data.data)
@@ -66,7 +67,7 @@ function VoteHimpunan() {
   const handleSubmit = () => {
     console.log(valueData)
     localStorage.setItem('himpunan', valueData)
-    history.push('/')
+    history.push('/home')
   }
 
   return (
@@ -118,6 +119,37 @@ function VoteHimpunan() {
               </Card>
             )
           })}
+          <Card className={classes.card}>
+            <CardHeader title={0} style={{textAlign: 'center'}} />
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image=''
+                title='Contemplative Reptile'
+              />
+              <CardContent>
+                <Typography
+                  gutterBottom
+                  variant='h5'
+                  component='h2'
+                  style={{textAlign: 'center'}}
+                >
+                  GOLPUT
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions
+              style={{alignItems: 'center', justifyContent: 'center'}}
+            >
+              <Radio
+                checked={valueData === 'GOLPUT'}
+                onChange={handleChange}
+                value={'GOLPUT'}
+                name={'GOLPUT'}
+                inputProps={{'aria-label': 'A'}}
+              />
+            </CardActions>
+          </Card>
         </div>
         <Button
           variant='contained'
