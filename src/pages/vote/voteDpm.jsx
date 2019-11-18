@@ -48,7 +48,9 @@ function VoteDpm() {
 
   useEffect(() => {
     async function fetchData() {
-      const dpm = await axios('http://localhost:8000/api/v1/get-paslon-dpm')
+      const dpm = await axios(
+        'http://kinamotif.com/backend/api/v1/get-paslon-dpm',
+      )
 
       setData(dpm.data.data)
     }

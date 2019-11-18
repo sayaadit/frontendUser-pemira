@@ -48,7 +48,7 @@ function VoteHimpunan() {
   useEffect(() => {
     async function fetchData() {
       const dpm = await axios(
-        `http://localhost:8000/api/v1/get-paslon-${login[0].jenis_himp}`,
+        `http://kinamotif.com/backend/api/v1/get-paslon-${login[0].jenis_himp}`,
       )
 
       setData(dpm.data.data)

@@ -49,7 +49,9 @@ function VoteBem() {
 
   useEffect(() => {
     async function fetchData() {
-      const dpm = await axios('http://localhost:8000/api/v1/get-paslon-bem')
+      const dpm = await axios(
+        'http://kinamotif.com/backend/api/v1/get-paslon-bem',
+      )
 
       setData(dpm.data.data)
     }
