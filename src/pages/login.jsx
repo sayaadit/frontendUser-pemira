@@ -87,11 +87,9 @@ function Login() {
             <img src={pemira} alt='terimakasih' />
           </div>
         </div>
-        <img
-          src={LoginImage}
-          alt='terimakasih'
-          style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
-        />
+        <center>
+          <img src={LoginImage} alt='terimakasih' style={{display: 'block'}} />
+        </center>
       </div>
       <div
         style={{
