@@ -33,9 +33,11 @@ function RekapHasil(props) {
 
     if (props.bem !== null) {
       bem = props.bem
-    } else if (props.dpm !== null) {
+    }
+    if (props.dpm !== null) {
       dpm = props.dpm
-    } else if (props.himpunan !== null) {
+    }
+    if (props.himpunan !== null) {
       himpunan = props.himpunan
     }
     const requestBody = {
