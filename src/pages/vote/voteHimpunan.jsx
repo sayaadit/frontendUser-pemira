@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
 
 function VoteHimpunan() {
   const classes = useStyles()
-  const [valueData, setValue] = useState('female')
+  const [valueData, setValue] = useState('GOLPUT')
   const [data, setData] = useState(null)
   let history = useHistory()
   const login = JSON.parse(localStorage.getItem('_p'))

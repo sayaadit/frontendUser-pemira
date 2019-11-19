@@ -40,9 +40,7 @@ const useStyles = makeStyles(theme => ({
 
 function VoteBem() {
   const classes = useStyles()
-  const [valueData, setValue] = useState(
-    'Erwin Maulana & Nurjannatin Aliya A.T.',
-  )
+  const [valueData, setValue] = useState('GOLPUT')
 
   const [data, setData] = useState(null)
   let history = useHistory()
